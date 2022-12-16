@@ -25,6 +25,13 @@ class _BookListPageState extends State<BookListPage> {
     //print(await http.read(Uri.https('example.com', 'foobar.txt')));
   }
   
+  //initState akan dijalankan saat halaman book_list terbuka
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+  }
+  
   @override
   Widget build(BuildContext context) {
     return Scaffold(
