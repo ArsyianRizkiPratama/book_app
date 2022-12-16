@@ -17,6 +17,9 @@ class _BookListPageState extends State<BookListPage> {
       appBar: AppBar(
         title: Text("Book Catalogue"),
       ),
+      
+      //shortcut ctrl + space untuk menunjukan auto complete
+      body: Container(),
     );
   }
 }
