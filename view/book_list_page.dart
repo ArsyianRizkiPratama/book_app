@@ -16,7 +16,7 @@ class _BookListPageState extends State<BookListPage> {
   //link untuk isi fungsi di bawah ("https://pub.dev/packages/http")
   // karena await merupakan 'await' pasti merupakan fungsi asyncronus, maka perlu di tambahkan async setelah fectBookApi()
   fectBookApi() async {
-    var url = Uri.https('example.com', 'whatsit/create');
+    var url = Uri.https('https://api.itbook.store/1.0/new');
     var response =
         await http.post(url, body: {'name': 'doodle', 'color': 'blue'});
     print('Response status: ${response.statusCode}');
