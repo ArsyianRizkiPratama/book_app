@@ -18,7 +18,7 @@ class _BookListPageState extends State<BookListPage> {
   fectBookApi() async {
     var url = Uri.parse('https://api.itbook.store/1.0/new');
     var response =
-        await http.get(url, );
+        await http.get(url);
     print('Response status: ${response.statusCode}');
     print('Response body: ${response.body}');
 
