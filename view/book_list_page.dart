@@ -14,6 +14,9 @@ class BookListPage extends StatefulWidget {
 
 class _BookListPageState extends State<BookListPage> {
   
+  //membuat variabel yang dapat di akses dari manapun
+  BookListResponse? bookList;
+  
    //membuat fungsi untuk bukunya
   //link untuk isi fungsi di bawah ("https://pub.dev/packages/http")
   // karena await merupakan 'await' pasti merupakan fungsi asyncronus, maka perlu di tambahkan async setelah fectBookApi()
@@ -28,6 +31,12 @@ class _BookListPageState extends State<BookListPage> {
     if (response.statusCode == 200) {
       //mengubah string menjadi sebuah json
       final jsonBookList = jsonDecode(response.body);
+      
+      //melakukan parsing
+      bookList = BookListResponse.fromJson(jsonBookList);
+      setState(() {
+        
+      });
     }
 
     //print(await http.read(Uri.https('example.com', 'foobar.txt')));
