@@ -59,7 +59,30 @@ class _BookListPageState extends State<BookListPage> {
       ),
       
       //shortcut ctrl + space untuk menunjukan auto complete
-      body: Container(),
+      body: Container(
+        child: bookList == null
+            ? Center(child: CircularProgressIndicator())
+            : ListView.builder(
+                itemBuilder: (context, index) {
+                  final currentBook = bookList!.books![index];
+                  return Row(
+                    children: [
+                      Image.network(
+                        currentBook.image!,
+                        height: 100,
+                      ),
+                      Column(
+                        children: [
+                          Text(currentBook.title!),
+                          Text(currentBook.subtitle!),
+                          Text(currentBook.price!),
+                        ],
+                      )
+                    ],
+                  );
+                },
+              ),
+      ),
     );
   }
 }
