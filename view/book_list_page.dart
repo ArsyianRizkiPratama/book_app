@@ -1,3 +1,5 @@
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
@@ -21,6 +23,12 @@ class _BookListPageState extends State<BookListPage> {
         await http.get(url);
     print('Response status: ${response.statusCode}');
     print('Response body: ${response.body}');
+    
+    //memeriksa status response, 200 == ok
+    if (response.statusCode == 200) {
+      //mengubah string menjadi sebuah json
+      final jsonBookList = jsonDecode(response.body);
+    }
 
     //print(await http.read(Uri.https('example.com', 'foobar.txt')));
   }
